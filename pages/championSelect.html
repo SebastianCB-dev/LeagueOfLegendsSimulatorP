@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>Champion Select | By Sebastian Carrillo</title>
+    <link rel="stylesheet" type="text/css" href="../src/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="src/css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="../assets/fonts/ionic/ionicons/css/ionicons.min.css">
+</head>
+
+<body>
+    <section id="container">
+        <div class="title">
+            <h2>Welcome <span id="nombreInvocador"></span>!</h2>
+        </div>
+        <div class="status" id="div_status">
+            <div class="img">
+                <img id="status-img-picked">
+            </div>
+            <div class="text">
+                <p id="status-picking">Picking...</p>
+                <p id="nombreInvocador-status"></p>
+            </div>
+        </div>
+
+        <div class="content-select" id="content-select-div">
+            <div class="options">
+                <img src="../assets/img/Tipos/top.png" id="button-top">
+                <img src="../assets/img/Tipos/Jungle_icon.png" id="button-jg">
+                <img src="../assets/img/Tipos/Middle_icon.png" id="button-middle">
+                <img src="../assets/img/Tipos/Bottom_icon.png" id="button-bottom">
+                <img src="../assets/img/Tipos/Support_icon.png" id="button-supp">
+            </div>
+            <div class="search">
+                <em class="ion-ios-search-strong"></em>
+                <input type="text" placeholder="Search" id="search-champion">
+            </div>
+
+        </div>
+        <div class="champions" id="box-champions">
+            <div class="champion" id="Random">
+                <div class="img" onclick="random();">
+                    <img src="assets/img/question.png" class="Random-css">
+                </div>
+                <p>Random</p>
+            </div>
+            <div class="champion" id="Aatrox" data-nameURL="Aatrox" data-nameOriginal="Aatrox" data-positions="top">
+                <div class="img" onclick="championSelected('Aatrox', 'Aatrox');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Aatrox.png">
+                </div>
+                <p>Aatrox</p>
+            </div>
+            <div class="champion" id="Ahri" data-nameURL="Ahri" data-nameOriginal="Ahri" data-positions="mid supp">
+                <div class="img" onclick="championSelected('Ahri', 'Ahri');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Ahri.png">
+                </div>
+                <p>Ahri</p>
+            </div>
+            <div class="champion" id="Akali" data-nameURL="Akali" data-nameOriginal="Akali" data-positions="top mid">
+                <div class="img" onclick="championSelected('Akali', 'Akali');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Akali.png">
+                </div>
+                <p>Akali</p>
+            </div>
+            <div class="champion" id="Alistar" data-nameURL="Alistar" data-nameOriginal="Alistar" data-positions="supp">
+                <div class="img" onclick="championSelected('Alistar', 'Alistar');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Alistar.png">
+                </div>
+                <p>Alistar</p>
+            </div>
+            <div class="champion" id="Amumu" data-nameURL="Amumu" data-nameOriginal="Amumu" data-positions="jg">
+                <div class="img" onclick="championSelected('Amumu', 'Amumu');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Amumu.png">
+                </div>
+                <p>Amumu</p>
+            </div>
+            <div class="champion" id="Anivia" data-nameURL="Anivia" data-nameOriginal="Anivia" data-positions="mid supp">
+                <div class="img" onclick="championSelected('Anivia', 'Anivia');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Anivia.png">
+                </div>
+                <p>Anivia</p>
+            </div>
+            <div class="champion" id="Annie" data-nameURL="Annie" data-nameOriginal="Annie" data-positions="mid supp">
+                <div class="img" onclick="championSelected('Annie', 'Annie');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Annie.png">
+                </div>
+                <p>Annie</p>
+            </div>
+            <div class="champion" id="Ashe" data-nameURL="Ashe" data-nameOriginal="Ashe" data-positions="adc supp">
+                <div class="img" onclick="championSelected('Ashe', 'Ashe');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Ashe.png">
+                </div>
+                <p>Ashe</p>
+            </div>
+            <div class="champion" id="Blitzcrank" data-nameURL="Blitzcrank" data-nameOriginal="Blitzcrank" data-positions="supp">
+                <div class="img" onclick="championSelected('Blitzcrank', 'Blitzcrank');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Blitzcrank.png">
+                </div>
+                <p>Blitzcrank</p>
+            </div>
+            <div class="champion" id="Brand" data-nameURL="Brand" data-nameOriginal="Brand" data-positions="mid supp jg">
+                <div class="img" onclick="championSelected('Brand', 'Brand');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Brand.png">
+                </div>
+                <p>Brand</p>
+            </div>
+            <div class="champion" id="Braum" data-nameURL="Braum" data-nameOriginal="Braum" data-positions="supp">
+                <div class="img" onclick="championSelected('Braum', 'Braum');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Braum.png">
+                </div>
+                <p>Braum</p>
+            </div>
+            <div class="champion" id="Caitlyn" data-nameURL="Caitlyn" data-nameOriginal="Caitlyn" data-positions="adc">
+                <div class="img" onclick="championSelected('Caitlyn', 'Caitlyn');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Caitlyn.png">
+                </div>
+                <p>Caitlyn</p>
+            </div>
+            <div class="champion" id="Cassiopeia" data-nameURL="Cassiopeia" data-nameOriginal="Cassiopeia" data-positions="mid">
+                <div class="img" onclick="championSelected('Cassiopeia', 'Cassiopeia');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Cassiopeia.png">
+                </div>
+                <p>Cassiopeia</p>
+            </div>
+            <div class="champion" id="Cho'Gath" data-nameURL="Chogath" data-nameOriginal="Cho'Gath" data-positions="top">
+                <div class="img" onclick="championSelected('Chogath', `Cho'Gath`);">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Chogath.png">
+                </div>
+                <p>Cho'Gath</p>
+            </div>
+            <div class="champion" id="Corki" data-nameURL="Corki" data-nameOriginal="Corki" data-positions="adc mid">
+                <div class="img" onclick="championSelected('Corki', 'Corki');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Corki.png">
+                </div>
+                <p>Corki</p>
+            </div>
+            <div class="champion" id="Darius" data-nameURL="Darius" data-nameOriginal="Darius" data-positions="top">
+                <div class="img" onclick="championSelected('Darius', 'Darius');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Darius.png">
+                </div>
+                <p>Darius</p>
+            </div>
+            <div class="champion" id="Diana" data-nameURL="Diana" data-nameOriginal="Diana" data-positions="mid">
+                <div class="img" onclick="championSelected('Diana', 'Diana');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Diana.png">
+                </div>
+                <p>Diana</p>
+            </div>
+            <div class="champion" id="Draven" data-nameURL="Draven" data-nameOriginal="Draven" data-positions="adc">
+                <div class="img" onclick="championSelected('Draven', 'Draven');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Draven.png">
+                </div>
+                <p>Draven</p>
+            </div>
+            <div class="champion" id="Dr. Mundo" data-nameURL="DrMundo" data-nameOriginal="Dr. Mundo" data-positions="top jg">
+                <div class="img" onclick="championSelected('DrMundo', 'Dr. Mundo');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/DrMundo.png">
+                </div>
+                <p>Dr. Mundo</p>
+            </div>
+            <div class="champion" id="Elise" data-nameURL="Elise" data-nameOriginal="Elise" data-positions="jg">
+                <div class="img" onclick="championSelected('Elise', 'Elise');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Elise.png">
+                </div>
+                <p>Elise</p>
+            </div>
+            <div class="champion" id="Evelynn" data-nameURL="Evelynn" data-nameOriginal="Evelynn" data-positions="jg">
+                <div class="img" onclick="championSelected('Evelynn', 'Evelynn');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Evelynn.png">
+                </div>
+                <p>Evelynn</p>
+            </div>
+            <div class="champion" id="Ezreal" data-nameURL="Ezreal" data-nameOriginal="Ezreal" data-positions="adc">
+                <div class="img" onclick="championSelected('Ezreal', 'Ezreal');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Ezreal.png">
+                </div>
+                <p>Ezreal</p>
+            </div>
+            <div class="champion" id="Fiddlesticks" data-nameURL="Fiddlesticks" data-nameOriginal="Fiddlesticks" data-positions="jg">
+                <div class="img" onclick="championSelected('Fiddlesticks', 'Fiddlesticks');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Fiddlesticks.png">
+                </div>
+                <p>Fiddlesticks</p>
+            </div>
+            <div class="champion" id="Fiora" data-nameURL="Fiora" data-nameOriginal="Fiora" data-positions="top">
+                <div class="img" onclick="championSelected('Fiora', 'Fiora');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Fiora.png">
+                </div>
+                <p>Fiora</p>
+            </div>
+            <div class="champion" id="Fizz" data-nameURL="Fizz" data-nameOriginal="Fizz" data-positions="mid">
+                <div class="img" onclick="championSelected('Fizz', 'Fizz');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Fizz.png">
+                </div>
+                <p>Fizz</p>
+            </div>
+            <div class="champion" id="Galio" data-nameURL="Galio" data-nameOriginal="Galio" data-positions="supp mid">
+                <div class="img" onclick="championSelected('Galio', 'Galio');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Galio.png">
+                </div>
+                <p>Galio</p>
+            </div>
+            <div class="champion" id="Gangplank" data-nameURL="Gangplank" data-nameOriginal="Gangplank" data-positions="top">
+                <div class="img" onclick="championSelected('Gangplank', 'Gangplank');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Gangplank.png">
+                </div>
+                <p>Gangplank</p>
+            </div>
+            <div class="champion" id="Garen" data-nameURL="Garen" data-nameOriginal="Garen" data-positions="top">
+                <div class="img" onclick="championSelected('Garen', 'Garen');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Garen.png">
+                </div>
+                <p>Garen</p>
+            </div>
+            <div class="champion" id="Gnar" data-nameURL="Gnar" data-nameOriginal="Gnar" data-positions="top">
+                <div class="img" onclick="championSelected('Gnar', 'Gnar');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Gnar.png">
+                </div>
+                <p>Gnar</p>
+            </div>
+            <div class="champion" id="Gragas" data-nameURL="Gragas" data-nameOriginal="Gragas" data-positions="top supp jg">
+                <div class="img" onclick="championSelected('Gragas', 'Gragas');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Gragas.png">
+                </div>
+                <p>Gragas</p>
+            </div>
+            <div class="champion" id="Graves" data-nameURL="Graves" data-nameOriginal="Graves" data-positions="jg">
+                <div class="img" onclick="championSelected('Graves', 'Graves');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Graves.png">
+                </div>
+                <p>Graves</p>
+            </div>
+            <div class="champion" id="Hecarim" data-nameURL="Hecarim" data-nameOriginal="Hecarim" data-positions="jg">
+                <div class="img" onclick="championSelected('Hecarim', 'Hecarim');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Hecarim.png">
+                </div>
+                <p>Hecarim</p>
+            </div>
+            <div class="champion" id="Heimerdinger" data-nameURL="Hecarim" data-nameOriginal="Heimerdinger" data-positions="mid adc">
+                <div class="img" onclick="championSelected('Heimerdinger', 'Heimerdinger');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Heimerdinger.png">
+                </div>
+                <p>Heimerdinger</p>
+            </div>
+            <div class="champion" id="Irelia" data-nameURL="Irelia" data-nameOriginal="Irelia" data-positions="mid top">
+                <div class="img" onclick="championSelected('Irelia', 'Irelia');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Irelia.png">
+                </div>
+                <p>Irelia</p>
+            </div>
+            <div class="champion" id="Janna" data-nameURL="Janna" data-nameOriginal="Janna" data-positions="supp">
+                <div class="img" onclick="championSelected('Janna', 'Janna');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Janna.png">
+                </div>
+                <p>Janna</p>
+            </div>
+            <div class="champion" id="JarvanIV" data-nameURL="JarvanIV" data-nameOriginal="JarvanIV" data-positions="supp jg">
+                <div class="img" onclick="championSelected('JarvanIV', 'JarvanIV');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/JarvanIV.png">
+                </div>
+                <p>JarvanIV</p>
+            </div>
+            <div class="champion" id="Jax" data-nameURL="Jax" data-nameOriginal="Jax" data-positions="top jg">
+                <div class="img" onclick="championSelected('Jax', 'Jax');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Jax.png">
+                </div>
+                <p>Jax</p>
+            </div>
+            <div class="champion" id="Jayce" data-nameURL="Jayce" data-nameOriginal="Jayce" data-positions="mid top">
+                <div class="img" onclick="championSelected('Jayce', 'Jayce');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Jayce.png">
+                </div>
+                <p>Jayce</p>
+            </div>
+            <div class="champion" id="Jinx" data-nameURL="Jinx" data-nameOriginal="Jinx" data-positions="adc">
+                <div class="img" onclick="championSelected('Jinx', 'Jinx');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Jinx.png">
+                </div>
+                <p>Jinx</p>
+            </div>
+            <div class="champion" id="Karma" data-nameURL="Karma" data-nameOriginal="Karma" data-positions="top mid supp">
+                <div class="img" onclick="championSelected('Karma', 'Karma');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Karma.png">
+                </div>
+                <p>Karma</p>
+            </div>
+            <div class="champion" id="Karthus" data-nameURL="Karthus" data-nameOriginal="Karthus" data-positions="jg">
+                <div class="img" onclick="championSelected('Karthus', 'Karthus');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Karthus.png">
+                </div>
+                <p>Karthus</p>
+            </div>
+            <div class="champion" id="Kassadin" data-nameURL="Kassadin" data-nameOriginal="Kassadin" data-positions="mid">
+                <div class="img" onclick="championSelected('Kassadin', 'Kassadin');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Kassadin.png">
+                </div>
+                <p>Kassadin</p>
+            </div>
+            <div class="champion" id="Katarina" data-nameURL="Katarina" data-nameOriginal="Katarina" data-positions="mid top">
+                <div class="img" onclick="championSelected('Katarina', 'Katarina');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Katarina.png">
+                </div>
+                <p>Katarina</p>
+            </div>
+            <div class="champion" id="Kayle" data-nameURL="Kayle" data-nameOriginal="Kayle" data-positions="top">
+                <div class="img" onclick="championSelected('Kayle', 'Kayle');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Kayle.png">
+                </div>
+                <p>Kayle</p>
+            </div>
+            <div class="champion" id="Kennen" data-nameURL="Kennen" data-nameOriginal="Kennen" data-positions="mid adc">
+                <div class="img" onclick="championSelected('Kennen', 'Kennen');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Kennen.png">
+                </div>
+                <p>Kennen</p>
+            </div>
+            <div class="champion" id="Kha'Zix" data-nameURL="Khazix" data-nameOriginal="Kha'Zix" data-positions="jg">
+                <div class="img" onclick="championSelected('Khazix', `Kha'Zix`);">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Khazix.png">
+                </div>
+                <p>Kha'Zix</p>
+            </div>
+            <div class="champion" id="Kog'Maw" data-nameURL="KogMaw" data-nameOriginal="Kog'Maw" data-positions="adc mid">
+                <div class="img" onclick="championSelected('KogMaw', `Kog'Maw`);">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/KogMaw.png">
+                </div>
+                <p>Kog'Maw</p>
+            </div>
+            <div class="champion" id="LeBlanc" data-nameURL="LeBlanc" data-nameOriginal="LeBlanc" data-positions="mid">
+                <div class="img" onclick="championSelected('Leblanc', 'LeBlanc');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Leblanc.png">
+                </div>
+                <p>LeBlanc</p>
+            </div>
+            <div class="champion" id="LeeSin" data-nameURL="LeeSin" data-nameOriginal="LeeSin" data-positions="jg top">
+                <div class="img" onclick="championSelected('LeeSin', 'LeeSin');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/LeeSin.png">
+                </div>
+                <p>LeeSin</p>
+            </div>
+            <div class="champion" id="Leona" data-nameURL="Leona" data-nameOriginal="Leona" data-positions="supp">
+                <div class="img" onclick="championSelected('Leona', 'Leona');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Leona.png">
+                </div>
+                <p>Leona</p>
+            </div>
+            <div class="champion" id="Lissandra" data-nameURL="Lissandra" data-nameOriginal="Lissandra" data-positions="mid">
+                <div class="img" onclick="championSelected('Lissandra', 'Lissandra');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Lissandra.png">
+                </div>
+                <p>Lissandra</p>
+            </div>
+            <div class="champion" id="Lucian" data-nameURL="Lucian" data-nameOriginal="Lucian" data-positions="mid adc">
+                <div class="img" onclick="championSelected('Lucian', 'Lucian');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Lucian.png">
+                </div>
+                <p>Lucian</p>
+            </div>
+            <div class="champion" id="Lulu" data-nameURL="Lulu" data-nameOriginal="Lulu" data-positions="jg top">
+                <div class="img" onclick="championSelected('Lulu', 'Lulu');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Lulu.png">
+                </div>
+                <p>Lulu</p>
+            </div>
+            <div class="champion" id="Lux" data-nameURL="Lux" data-nameOriginal="Lux" data-positions="mid supp">
+                <div class="img" onclick="championSelected('Lux', 'Lux');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Lux.png">
+                </div>
+                <p>Lux</p>
+            </div>
+            <div class="champion" id="Malphite" data-nameURL="Malphite" data-nameOriginal="Malphite" data-positions="top supp">
+                <div class="img" onclick="championSelected('Malphite', 'Malphite');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Malphite.png">
+                </div>
+                <p>Malphite</p>
+            </div>
+            <div class="champion" id="Malzahar" data-nameURL="Malzahar" data-nameOriginal="Malzahar" data-positions="top mid">
+                <div class="img" onclick="championSelected('Malzahar', 'Malzahar');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Malzahar.png">
+                </div>
+                <p>Malzahar</p>
+            </div>
+            <div class="champion" id="Maokai" data-nameURL="Maokai" data-nameOriginal="Maokai" data-positions="top supp jg">
+                <div class="img" onclick="championSelected('Maokai', 'Maokai');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Maokai.png">
+                </div>
+                <p>Maokai</p>
+            </div>
+            <div class="champion" id="Maestro Yi" data-nameURL="MasterYi" data-nameOriginal="Maestro Yi" data-positions="top jg">
+                <div class="img" onclick="championSelected('MasterYi', 'Maestro Yi');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/MasterYi.png">
+                </div>
+                <p>Maestro Yi</p>
+            </div>
+            <div class="champion" id="Miss Fortune" data-nameURL="MissFortune" data-nameOriginal="Miss Fortune" data-positions="adc">
+                <div class="img" onclick="championSelected('MissFortune', 'Miss Fortune');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/MissFortune.png">
+                </div>
+                <p>Miss Fortune</p>
+            </div>
+            <div class="champion" id="Wukong" data-nameURL="MonkeyKing" data-nameOriginal="Wukong" data-positions="jg top">
+                <div class="img" onclick="championSelected('MonkeyKing', 'Wukong');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/MonkeyKing.png">
+                </div>
+                <p>Wukong</p>
+            </div>
+            <div class="champion" id="Mordekaiser" data-nameURL="Mordekaiser" data-nameOriginal="Mordekaiser" data-positions="top jg mid">
+                <div class="img" onclick="championSelected('Mordekaiser', 'Mordekaiser');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Mordekaiser.png">
+                </div>
+                <p>Mordekaiser</p>
+            </div>
+            <div class="champion" id="Morgana" data-nameURL="Morgana" data-nameOriginal="Morgana" data-positions="supp mid">
+                <div class="img" onclick="championSelected('Morgana', 'Morgana');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Morgana.png">
+                </div>
+                <p>Morgana</p>
+            </div>
+            <div class="champion" id="Nami" data-nameURL="Nami" data-nameOriginal="Nami" data-positions="supp">
+                <div class="img" onclick="championSelected('Nami', 'Nami');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Nami.png">
+                </div>
+                <p>Nami</p>
+            </div>
+            <div class="champion" id="Nasus" data-nameURL="Nasus" data-nameOriginal="Nasus" data-positions="top jg">
+                <div class="img" onclick="championSelected('Nasus', 'Nasus');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Nasus.png">
+                </div>
+                <p>Nasus</p>
+            </div>
+            <div class="champion" id="Nautilus" data-nameURL="Nautilus" data-nameOriginal="Nautilus" data-positions="jg supp">
+                <div class="img" onclick="championSelected('Nautilus', 'Nautilus');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Nautilus.png">
+                </div>
+                <p>Nautilus</p>
+            </div>
+            <div class="champion" id="Nidalee" data-nameURL="Nidalee" data-nameOriginal="Nidalee" data-positions="jg supp">
+                <div class="img" onclick="championSelected('Nidalee', 'Nidalee');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Nidalee.png">
+                </div>
+                <p>Nidalee</p>
+            </div>
+            <div class="champion" id="Nocturne" data-nameURL="Nocturne" data-nameOriginal="Nocturne" data-positions="jg mid">
+                <div class="img" onclick="championSelected('Nocturne', 'Nocturne');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Nocturne.png">
+                </div>
+                <p>Nocturne</p>
+            </div>
+            <div class="champion" id="Nunu" data-nameURL="Nunu" data-nameOriginal="Nunu" data-positions="jg">
+                <div class="img" onclick="championSelected('Nunu', 'Nunu');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Nunu.png">
+                </div>
+                <p>Nunu</p>
+            </div>
+            <div class="champion" id="Olaf" data-nameURL="Olaf" data-nameOriginal="Olaf" data-positions="jg">
+                <div class="img" onclick="championSelected('Olaf', 'Olaf');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Olaf.png">
+                </div>
+                <p>Olaf</p>
+            </div>
+            <div class="champion" id="Orianna" data-nameURL="Orianna" data-nameOriginal="Orianna" data-positions="mid">
+                <div class="img" onclick="championSelected('Orianna', 'Orianna');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Orianna.png">
+                </div>
+                <p>Orianna</p>
+            </div>
+            <div class="champion" id="Pantheon" data-nameURL="Pantheon" data-nameOriginal="Pantheon" data-positions="jg top supp">
+                <div class="img" onclick="championSelected('Pantheon', 'Pantheon');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Pantheon.png">
+                </div>
+                <p>Pantheon</p>
+            </div>
+            <div class="champion" id="Poppy" data-nameURL="Poppy" data-nameOriginal="Poppy" data-positions="top supp jg">
+                <div class="img" onclick="championSelected('Poppy', 'Poppy');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Poppy.png">
+                </div>
+                <p>Poppy</p>
+            </div>
+            <div class="champion" id="Quinn" data-nameURL="Quinn" data-nameOriginal="Quinn" data-positions="adc top">
+                <div class="img" onclick="championSelected('Quinn', 'Quinn');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Quinn.png">
+                </div>
+                <p>Quinn</p>
+            </div>
+            <div class="champion" id="Rammus" data-nameURL="Rammus" data-nameOriginal="Rammus" data-positions="jg">
+                <div class="img" onclick="championSelected('Rammus', 'Rammus');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Rammus.png">
+                </div>
+                <p>Rammus</p>
+            </div>
+            <div class="champion" id="Renekton" data-nameURL="Renekton" data-nameOriginal="Renekton" data-positions="top">
+                <div class="img" onclick="championSelected('Renekton', 'Renekton');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Renekton.png">
+                </div>
+                <p>Renekton</p>
+            </div>
+            <div class="champion" id="Rengar" data-nameURL="Rengar" data-nameOriginal="Rengar" data-positions="top jg">
+                <div class="img" onclick="championSelected('Rengar', 'Rengar');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Rengar.png">
+                </div>
+                <p>Rengar</p>
+            </div>
+            <div class="champion" id="Riven" data-nameURL="Riven" data-nameOriginal="Riven" data-positions="top">
+                <div class="img" onclick="championSelected('Riven', 'Riven');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Riven.png">
+                </div>
+                <p>Riven</p>
+            </div>
+            <div class="champion" id="Rumble" data-nameURL="Rumble" data-nameOriginal="Rumble" data-positions="top jg">
+                <div class="img" onclick="championSelected('Rumble', 'Rumble');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Rumble.png">
+                </div>
+                <p>Rumble</p>
+            </div>
+            <div class="champion" id="Ryze" data-nameURL="Ryze" data-nameOriginal="Ryze" data-positions="mid">
+                <div class="img" onclick="championSelected('Ryze', 'Ryze');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Ryze.png">
+                </div>
+                <p>Ryze</p>
+            </div>
+            <div class="champion" id="Sejuani" data-nameURL="Sejuani" data-nameOriginal="Sejuani" data-positions="jg">
+                <div class="img" onclick="championSelected('Sejuani', 'Sejuani');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Sejuani.png">
+                </div>
+                <p>Sejuani</p>
+            </div>
+            <div class="champion" id="Shaco" data-nameURL="Shaco" data-nameOriginal="Shaco" data-positions="jg supp">
+                <div class="img" onclick="championSelected('Shaco', 'Shaco');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Shaco.png">
+                </div>
+                <p>Shaco</p>
+            </div>
+            <div class="champion" id="Shen" data-nameURL="Shen" data-nameOriginal="Shen" data-positions="top supp">
+                <div class="img" onclick="championSelected('Shen', 'Shen');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Shen.png">
+                </div>
+                <p>Shen</p>
+            </div>
+            <div class="champion" id="Shyvana" data-nameURL="Shyvana" data-nameOriginal="Shyvana" data-positions="jg">
+                <div class="img" onclick="championSelected('Shyvana', 'Shyvana');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Shyvana.png">
+                </div>
+                <p>Shyvana</p>
+            </div>
+            <div class="champion" id="Singed" data-nameURL="Singed" data-nameOriginal="Singed" data-positions="top">
+                <div class="img" onclick="championSelected('Singed', 'Singed');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Singed.png">
+                </div>
+                <p>Singed</p>
+            </div>
+            <div class="champion" id="Sion" data-nameURL="Sion" data-nameOriginal="Sion" data-positions="top supp">
+                <div class="img" onclick="championSelected('Sion', 'Sion');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Sion.png">
+                </div>
+                <p>Sion</p>
+            </div>
+            <div class="champion" id="Sivir" data-nameURL="Sivir" data-nameOriginal="Sivir" data-positions="adc">
+                <div class="img" onclick="championSelected('Sivir', 'Sivir');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Sivir.png">
+                </div>
+                <p>Sivir</p>
+            </div>
+            <div class="champion" id="Skarner" data-nameURL="Skarner" data-nameOriginal="Skarner" data-positions="jg">
+                <div class="img" onclick="championSelected('Skarner', 'Skarner');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Skarner.png">
+                </div>
+                <p>Skarner</p>
+            </div>
+            <div class="champion" id="Sona" data-nameURL="Sona" data-nameOriginal="Sona" data-positions="supp">
+                <div class="img" onclick="championSelected('Sona', 'Sona');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Sona.png">
+                </div>
+                <p>Sona</p>
+            </div>
+            <div class="champion" id="Soraka" data-nameURL="Soraka" data-nameOriginal="Soraka" data-positions="supp">
+                <div class="img" onclick="championSelected('Soraka', 'Soraka');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Soraka.png">
+                </div>
+                <p>Soraka</p>
+            </div>
+            <div class="champion" id="Swain" data-nameURL="Swain" data-nameOriginal="Swain" data-positions="supp mid">
+                <div class="img" onclick="championSelected('Swain', 'Swain');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Swain.png">
+                </div>
+                <p>Swain</p>
+            </div>
+            <div class="champion" id="Syndra" data-nameURL="Syndra" data-nameOriginal="Syndra" data-positions="mid">
+                <div class="img" onclick="championSelected('Syndra', 'Syndra');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Syndra.png">
+                </div>
+                <p>Syndra</p>
+            </div>
+            <div class="champion" id="Talon" data-nameURL="Talon" data-nameOriginal="Talon" data-positions="mid">
+                <div class="img" onclick="championSelected('Talon', 'Talon');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Talon.png">
+                </div>
+                <p>Talon</p>
+            </div>
+            <div class="champion" id="Taric" data-nameURL="Taric" data-nameOriginal="Taric" data-positions="supp">
+                <div class="img" onclick="championSelected('Taric', 'Taric');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Taric.png">
+                </div>
+                <p>Taric</p>
+            </div>
+            <div class="champion" id="Teemo" data-nameURL="Teemo" data-nameOriginal="Teemo" data-positions="top">
+                <div class="img" onclick="championSelected('Teemo', 'Teemo');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Teemo.png">
+                </div>
+                <p>Teemo</p>
+            </div>
+            <div class="champion" id="Thresh" data-nameURL="Thresh" data-nameOriginal="Thresh" data-positions="supp">
+                <div class="img" onclick="championSelected('Thresh', 'Thresh');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Thresh.png">
+                </div>
+                <p>Thresh</p>
+            </div>
+            <div class="champion" id="Tristana" data-nameURL="Tristana" data-nameOriginal="Tristana" data-positions="adc mid top">
+                <div class="img" onclick="championSelected('Tristana', 'Tristana');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Tristana.png">
+                </div>
+                <p>Tristana</p>
+            </div>
+            <div class="champion" id="Trundle" data-nameURL="Trundle" data-nameOriginal="Trundle" data-positions="jg top">
+                <div class="img" onclick="championSelected('Trundle', 'Trundle');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Trundle.png">
+                </div>
+                <p>Trundle</p>
+            </div>
+            <div class="champion" id="Tryndamere" data-nameURL="Tryndamere" data-nameOriginal="Tryndamere" data-positions="jg top">
+                <div class="img" onclick="championSelected('Tryndamere', 'Tryndamere');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Tryndamere.png">
+                </div>
+                <p>Tryndamere</p>
+            </div>
+            <div class="champion" id="Twisted Fate" data-nameURL="TwistedFate" data-nameOriginal="Twisted Fate" data-positions="mid">
+                <div class="img" onclick="championSelected('TwistedFate', 'Twisted Fate');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/TwistedFate.png">
+                </div>
+                <p>Twisted Fate</p>
+            </div>
+            <div class="champion" id="Twitch" data-nameURL="Twitch" data-nameOriginal="Twitch" data-positions="jg adc">
+                <div class="img" onclick="championSelected('Twitch', 'Twitch');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Twitch.png">
+                </div>
+                <p>Twitch</p>
+            </div>
+            <div class="champion" id="Udyr" data-nameURL="Udyr" data-nameOriginal="Udyr" data-positions="jg">
+                <div class="img" onclick="championSelected('Udyr', 'Udyr');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Udyr.png">
+                </div>
+                <p>Udyr</p>
+            </div>
+            <div class="champion" id="Urgot" data-nameURL="Urgot" data-nameOriginal="Urgot" data-positions="top">
+                <div class="img" onclick="championSelected('Urgot', 'Urgot');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Urgot.png">
+                </div>
+                <p>Urgot</p>
+            </div>
+            <div class="champion" id="Varus" data-nameURL="Varus" data-nameOriginal="Varus" data-positions="adc">
+                <div class="img" onclick="championSelected('Varus', 'Varus');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Varus.png">
+                </div>
+                <p>Varus</p>
+            </div>
+            <div class="champion" id="Vayne" data-nameURL="Vayne" data-nameOriginal="Vayne" data-positions="adc top">
+                <div class="img" onclick="championSelected('Vayne', 'Vayne');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Vayne.png">
+                </div>
+                <p>Vayne</p>
+            </div>
+            <div class="champion" id="Veigar" data-nameURL="Veigar" data-nameOriginal="Veigar" data-positions="mid supp">
+                <div class="img" onclick="championSelected('Veigar', 'Veigar');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Veigar.png">
+                </div>
+                <p>Veigar</p>
+            </div>
+            <div class="champion" id="Vel'Koz" data-nameURL="Velkoz" data-nameOriginal="Vel'Koz" data-positions="mid supp">
+                <div class="img" onclick="championSelected('Velkoz', `Vel'Koz`);">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Velkoz.png">
+                </div>
+                <p>Vel'Koz</p>
+            </div>
+            <div class="champion" id="Vi" data-nameURL="Vi" data-nameOriginal="Vi" data-positions="jg">
+                <div class="img" onclick="championSelected('Vi', 'Vi');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Vi.png">
+                </div>
+                <p>Vi</p>
+            </div>
+            <div class="champion" id="Viktor" data-nameURL="Viktor" data-nameOriginal="Viktor" data-positions="mid">
+                <div class="img" onclick="championSelected('Viktor', 'Viktor');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Viktor.png">
+                </div>
+                <p>Viktor</p>
+            </div>
+            <div class="champion" id="Vladimir" data-nameURL="Vladimir" data-nameOriginal="Vladimir" data-positions="mid top">
+                <div class="img" onclick="championSelected('Vladimir', 'Vladimir');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Vladimir.png">
+                </div>
+                <p>Vladimir</p>
+            </div>
+            <div class="champion" id="Volibear" data-nameURL="Volibear" data-nameOriginal="Volibear" data-positions="jg top">
+                <div class="img" onclick="championSelected('Volibear', 'Volibear');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Volibear.png">
+                </div>
+                <p>Volibear</p>
+            </div>
+            <div class="champion" id="Warwick" data-nameURL="Warwick" data-nameOriginal="Warwick" data-positions="jg top">
+                <div class="img" onclick="championSelected('Warwick', 'Warwick');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Warwick.png">
+                </div>
+                <p>Warwick</p>
+            </div>
+            <div class="champion" id="Xerath" data-nameURL="Xerath" data-nameOriginal="Xerath" data-positions="supp mid">
+                <div class="img" onclick="championSelected('Xerath', 'Xerath');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Xerath.png">
+                </div>
+                <p>Xerath</p>
+            </div>
+            <div class="champion" id="Xin Zhao" data-nameURL="XinZhao" data-nameOriginal="Xin Zhao" data-positions="jg">
+                <div class="img" onclick="championSelected('XinZhao', 'Xin Zhao');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/XinZhao.png">
+                </div>
+                <p>Xin Zhao</p>
+            </div>
+            <div class="champion" id="Yasuo" data-nameURL="Yasuo" data-nameOriginal="Yasuo" data-positions="top mid">
+                <div class="img" onclick="championSelected('Yasuo', 'Yasuo');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Yasuo.png">
+                </div>
+                <p>Yasuo</p>
+            </div>
+            <div class="champion" id="Zac" data-nameURL="Zac" data-nameOriginal="Zac" data-positions="jg">
+                <div class="img" onclick="championSelected('Zac', 'Zac');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Zac.png">
+                </div>
+                <p>Zac</p>
+            </div>
+            <div class="champion" id="Zed" data-nameURL="Zed" data-nameOriginal="Zed" data-positions="mid">
+                <div class="img" onclick="championSelected('Zed', 'Zed');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Zed.png">
+                </div>
+                <p>Zed</p>
+            </div>
+            <div class="champion" id="Ziggs" data-nameURL="Ziggs" data-nameOriginal="Ziggs" data-positions="mid">
+                <div class="img" onclick="championSelected('Ziggs', 'Ziggs');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Ziggs.png">
+                </div>
+                <p>Ziggs</p>
+            </div>
+            <div class="champion" id="Zilean" data-nameURL="Zilean" data-nameOriginal="Zilean" data-positions="supp">
+                <div class="img" onclick="championSelected('Zilean', 'Zilean');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Zilean.png">
+                </div>
+                <p>Zilean</p>
+            </div>
+            <div class="champion" id="Zyra" data-nameURL="Zyra" data-nameOriginal="Zyra" data-positions="supp mid">
+                <div class="img" onclick="championSelected('Zyra', 'Zyra');">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/9.6.1/img/champion/Zyra.png">
+                </div>
+                <p>Zyra</p>
+            </div>
+        </div>
+        <section id="YourSelect">
+            <img src="" id="champSelectImg">
+            <p id="champSelectText"></p>
+        </section>
+    </section>
+        <button type="button" id="buttonSelect" disabled>Seleccionar</button>
+    
+
+    <script src="../src/js/championSelect.js"></script>
+</body>
+
+</html>

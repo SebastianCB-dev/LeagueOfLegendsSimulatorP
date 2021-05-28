@@ -1,0 +1,139 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+body {
+  background-image: url("../../assets/img/background-incio.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+@font-face {
+  font-family: "LeagueOfLegendsBold";
+  src: url("../../assets/fonts/FFMarkW05-Bold.8e5368c00aa72d1e1b19d7b437c375f4.woff2");
+}
+@font-face {
+  font-family: "LeagueOfLegendsHeavy";
+  src: url("../../assets/fonts/FFMarkW05-Heavy.1de8fa6eb6e45628ebb3edd635462180.woff2");
+}
+@font-face {
+  font-family: "LeagueOfLegendsMedium";
+  src: url("../../assets/fonts/FFMarkW05-Medium.662fbc7901e31d6bee9c91d5f2cf42a1.woff2");
+}
+#box-login {
+  height: 600px;
+  width: 600px;
+  margin: 0px auto;
+  margin-top: 130px;
+  background-color: #fff;
+  padding-top: 70px;
+}
+#box-login h1, #box-login h2 {
+  text-align: center;
+  font-family: "LeagueOfLegendsMedium";
+}
+#box-login h2 {
+  font-size: 15px;
+}
+#box-login h1 {
+  margin-top: 30px;
+  font-size: 40px;
+}
+#box-login form {
+  margin-top: 100px;
+  width: 70%;
+  margin: 0px auto;
+  margin-top: 100px;
+}
+#box-login form label {
+  font-size: 22px;
+  text-decoration: underline;
+}
+#box-login form input {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  height: 80px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-color: #E7E7E7;
+  padding-left: 20px;
+  font-size: 18px;
+}
+#box-login form .error {
+  animation: error 300ms linear;
+  border: 2px solid #af242d;
+}
+@keyframes error {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+#box-login form input:focus {
+  background-color: #f3f1f1;
+}
+#box-login form label, #box-login form input {
+  font-family: "LeagueOfLegendsMedium";
+}
+#box-login form button {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: #C7333E;
+  border: transparent;
+  border-radius: 35px;
+  margin: 0 auto;
+  margin-top: 60px;
+  cursor: pointer;
+}
+#box-login form button em {
+  font-size: 50px;
+  color: #fff;
+}
+#box-login form button:hover {
+  background-color: #af242d;
+}
+
+@media (max-width: 1200px) {
+  body {
+    height: 100%;
+    background-size: auto;
+  }
+}
+@media (max-width: 630px) {
+  #box-login {
+    width: 100%;
+  }
+}
+@media (max-width: 375px) {
+  #box-login h1 {
+    font-size: 30px;
+  }
+  #box-login form label {
+    font-size: 18px;
+  }
+}
+@media (max-width: 496px) {
+  #box-login form label {
+    display: block;
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=estilos.css.map */
